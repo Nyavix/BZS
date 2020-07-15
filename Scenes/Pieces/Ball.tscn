@@ -4,10 +4,10 @@
 [ext_resource path="res://Scripts/Ball.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 30.7551
+radius = 8.44108
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 65.0712
+radius = 24.9597
 
 [node name="Ball" type="RigidBody2D"]
 collision_layer = 4
