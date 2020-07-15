@@ -4,6 +4,8 @@ export var spriteName = "Bob"
 export var wallSlideA = "wallslideA"
 export var jumpA = "jumpA"
 export var walkA = "walkA"
+
+#NC
 export var landDust = "LandingDust"
 export var runDust = "RunningDust"
 
@@ -23,6 +25,8 @@ onready var sprite = get_node(spriteName)
 onready var wsAudio = get_node(wallSlideA)
 onready var jumpAudio = get_node(jumpA)
 onready var walkAudio = get_node(walkA)
+
+#NC
 onready var landingDust = get_node(landDust)
 onready var runningDust = get_node(runDust)
 
@@ -65,11 +69,14 @@ func pRun():
 			wsAudio.play()
 	else: wsAudio.stop()
 
+#particles #NC
 func particleUpdate():
 	
+	#emits landing particles when landing
 	if is_on_floor() and not landed:
 		landingDust.emitting = true
 	
+	#plays running particles when oving on ground
 	if vel.x != 0 and is_on_floor():
 		runningDust.emitting = true;
 	else:
@@ -132,7 +139,9 @@ func _physics_process(delta):
 	elif vel.x > 0:
 		sprite.flip_h = false
 		
+	#particle function call
 	particleUpdate()
+	#animation function call
 	pRun()
 	
 func near_ball():
