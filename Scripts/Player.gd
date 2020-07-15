@@ -42,7 +42,10 @@ func pRun():
 			walkAudio.play()
 	
 	if not is_on_floor() and not is_on_wall():
-		sprite.play('jump')
+		if vel.y > 0:
+			sprite.play("fall")
+		else:
+			sprite.play('jump')
 		walkAudio.stop()
 	
 	if is_on_floor() and vel.x == 0:
