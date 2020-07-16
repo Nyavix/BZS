@@ -133,16 +133,6 @@ animations = [ {
 "name": "idle",
 "speed": 24.0
 }, {
-"frames": [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 31 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 42 ), ExtResource( 39 ), ExtResource( 43 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 26 ) ],
-"loop": true,
-"name": "run",
-"speed": 24.0
-}, {
-"frames": [ ExtResource( 99 ), ExtResource( 100 ), ExtResource( 103 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 105 ), ExtResource( 104 ), ExtResource( 107 ), ExtResource( 106 ) ],
-"loop": true,
-"name": "land",
-"speed": 24.0
-}, {
 "frames": [ ExtResource( 93 ), ExtResource( 96 ), ExtResource( 91 ), ExtResource( 94 ), ExtResource( 92 ), ExtResource( 95 ) ],
 "loop": true,
 "name": "wallslide",
@@ -156,6 +146,16 @@ animations = [ {
 "frames": [ ExtResource( 121 ), ExtResource( 115 ), ExtResource( 112 ), ExtResource( 118 ), ExtResource( 108 ), ExtResource( 120 ), ExtResource( 119 ), ExtResource( 109 ), ExtResource( 113 ), ExtResource( 114 ), ExtResource( 122 ), ExtResource( 111 ), ExtResource( 125 ), ExtResource( 116 ), ExtResource( 123 ), ExtResource( 124 ), ExtResource( 117 ), ExtResource( 110 ) ],
 "loop": false,
 "name": "fall",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 99 ), ExtResource( 100 ), ExtResource( 103 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 105 ), ExtResource( 104 ), ExtResource( 107 ), ExtResource( 106 ) ],
+"loop": true,
+"name": "land",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 31 ), ExtResource( 36 ), ExtResource( 38 ), ExtResource( 42 ), ExtResource( 39 ), ExtResource( 43 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "run",
 "speed": 24.0
 } ]
 
@@ -191,8 +191,7 @@ lerpVal = 0.25
 [node name="Bob" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle"
-frame = 20
-playing = true
+frame = 14
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.246547, 2.04612 )
