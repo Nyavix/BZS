@@ -83,7 +83,10 @@ func particleUpdate():
 		runningDust.emitting = false;
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
+	
+	if is_on_floor():
+		wJumpCount = 0
 	
 	# movement input
 	if Input.is_action_pressed("move_left"):
@@ -114,24 +117,18 @@ func _physics_process(delta):
 	
 	#jump input
 	if Input.is_action_just_pressed("jump"):
-		if is_on_floor():
+		if is_on_floor() and not is_on_wall():
 			wJumpCount = 0
 			jumpAudio.play()
 			vel.y += jumpForce
 		if is_on_wall() and wJumpCount < 2:
 			wJumpCount += 1
 			jumpAudio.play()
-			vel.y = jumpForce
+			vel.y += jumpForce * 1.2
 			if is_on_wall() and sprite.flip_h == true:
-				if is_on_floor():
-					vel.y += jumpForce
-				else:
-					vel.x += -jumpForce * 2
+				vel.x += -jumpForce * 2
 			elif is_on_wall() and sprite.flip_h == false:	
-				if is_on_floor():
-					vel.y += jumpForce
-				else:
-					vel.x += jumpForce * 2
+				vel.x += jumpForce * 2
 	
 	#flips the sprite depending what direction player is moving
 	if vel.x < 0:
